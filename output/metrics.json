@@ -1,0 +1,203 @@
+{
+  "rows": {
+    "raw_rows": 1245,
+    "clean_rows": 1159,
+    "true_farms": 1200,
+    "duplicates_injected": 45,
+    "duplicates_removed": 45
+  },
+  "area_mae_ha": 0.0,
+  "imputation": {
+    "Rainfall_mm": {
+      "n_imputed": 100,
+      "mae_group_median_(used)": 97.14,
+      "mae_global_median": 334.63,
+      "mae_global_mean": 365.80394545454556,
+      "typical_value": 590.0216666666666
+    },
+    "Soil_pH": {
+      "n_imputed": 69,
+      "mae_group_median_(used)": 0.4942028985507246,
+      "mae_global_median": 0.4826086956521738,
+      "mae_global_mean": 0.4855905380643011,
+      "typical_value": 6.982666666666668
+    },
+    "Market_Price": {
+      "n_imputed": 82,
+      "mae_group_median_(used)": 147.21341463414635,
+      "mae_global_median": 1333.5,
+      "mae_global_mean": 1696.6001788908768,
+      "typical_value": 3594.2266666666665
+    },
+    "Fertilizer_kg": {
+      "n_imputed": 69,
+      "mae_group_median_(used)": 43.015942028985506,
+      "mae_global_median": 107.97391304347825,
+      "mae_global_mean": 112.18771383538999,
+      "typical_value": 222.31233333333333
+    }
+  },
+  "outlier_detection": {
+    "Yield_q_ha": {
+      "injected_total": 12,
+      "injected_errors": 11,
+      "iqr_found": 11,
+      "iqr_false_alarms": 13,
+      "iqr_k3_found": 11,
+      "iqr_k3_false_alarms": 0,
+      "z_found": 11,
+      "z_false_alarms": 3
+    },
+    "Market_Price": {
+      "injected_total": 6,
+      "injected_errors": 6,
+      "iqr_found": 6,
+      "iqr_false_alarms": 22,
+      "iqr_k3_found": 6,
+      "iqr_k3_false_alarms": 0,
+      "z_found": 6,
+      "z_false_alarms": 2
+    }
+  },
+  "outlier_strategies_yield": {
+    "No treatment": {
+      "rows": 1159,
+      "rmse": 21.923781218492103,
+      "mean_error_pct": 8.964319202060743,
+      "std_error_pct": 403.8084208009825,
+      "genuine_values_affected": 0
+    },
+    "Remove flagged rows": {
+      "rows": 1135,
+      "rmse": 0.0,
+      "mean_error_pct": 0.0,
+      "std_error_pct": 0.0,
+      "genuine_values_affected": 13
+    },
+    "Cap all at IQR fence": {
+      "rows": 1159,
+      "rmse": 0.9479597687944382,
+      "mean_error_pct": 0.4284857646254874,
+      "std_error_pct": 2.5170407920173448,
+      "genuine_values_affected": 13
+    },
+    "Two-tier rule (used)": {
+      "rows": 1159,
+      "rmse": 0.3111688646671171,
+      "mean_error_pct": 0.08168300496123528,
+      "std_error_pct": 1.9284738124858778,
+      "genuine_values_affected": 13
+    }
+  },
+  "crop_mean_yield": [
+    {
+      "crop": "Cotton",
+      "n": 136,
+      "truth": 14.051470588235293,
+      "naive": 15.924264705882354,
+      "cleaned": 14.046139705882354,
+      "naive_err_pct": 13.32810047095763,
+      "clean_err_pct": -0.03793825222395729
+    },
+    {
+      "crop": "Gram",
+      "n": 135,
+      "truth": 11.24962962962963,
+      "naive": 11.24962962962963,
+      "cleaned": 11.251851851851852,
+      "naive_err_pct": 0.0,
+      "clean_err_pct": 0.019753736748522224
+    },
+    {
+      "crop": "Maize",
+      "n": 182,
+      "truth": 29.85604395604396,
+      "naive": 35.61703296703297,
+      "cleaned": 29.908241758241754,
+      "naive_err_pct": 19.295888696676357,
+      "clean_err_pct": 0.17483160955498608
+    },
+    {
+      "crop": "Rice",
+      "n": 220,
+      "truth": 38.03181818181818,
+      "naive": 38.03181818181818,
+      "cleaned": 38.043124999999996,
+      "naive_err_pct": 0.0,
+      "clean_err_pct": 0.029729891239384496
+    },
+    {
+      "crop": "Soybean",
+      "n": 217,
+      "truth": 11.8073732718894,
+      "naive": 13.44147465437788,
+      "cleaned": 11.780875576036866,
+      "naive_err_pct": 13.839669034423544,
+      "clean_err_pct": -0.22441651705564894
+    },
+    {
+      "crop": "Wheat",
+      "n": 269,
+      "truth": 32.533085501858736,
+      "naive": 34.915241635687735,
+      "cleaned": 32.53197026022304,
+      "naive_err_pct": 7.3222570103069335,
+      "clean_err_pct": -0.0034280229449225397
+    }
+  ],
+  "missing_pct": {
+    "District": {
+      "before": 0.9166666666666666,
+      "after": 0.0
+    },
+    "Area_ha": {
+      "before": 0.4166666666666667,
+      "after": 0.0
+    },
+    "Yield_q_ha": {
+      "before": 3.0,
+      "after": 0.0
+    },
+    "Rainfall_mm": {
+      "before": 8.333333333333332,
+      "after": 0.0
+    },
+    "Soil_pH": {
+      "before": 5.75,
+      "after": 0.0
+    },
+    "Fertilizer_kg": {
+      "before": 5.75,
+      "after": 0.0
+    },
+    "Market_Price": {
+      "before": 6.833333333333333,
+      "after": 0.0
+    },
+    "Harvest_Date": {
+      "before": 0.0,
+      "after": 0.0
+    }
+  },
+  "preprocessing": {
+    "train_rows": 927,
+    "test_rows": 232,
+    "columns_after_encoding": 22,
+    "scaler_mean": {
+      "Area_ha": 2.064,
+      "Rainfall_mm": 584.848,
+      "Soil_pH": 6.974,
+      "Fertilizer_per_ha": 109.64,
+      "Crop_Duration_days": 120.451,
+      "Market_Price_log": 8.066
+    },
+    "scaler_std": {
+      "Area_ha": 1.141,
+      "Rainfall_mm": 405.625,
+      "Soil_pH": 0.512,
+      "Fertilizer_per_ha": 25.398,
+      "Crop_Duration_days": 20.694,
+      "Market_Price_log": 0.463
+    }
+  }
+}
