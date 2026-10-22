@@ -1,0 +1,29 @@
+step	issue	action	records_affected
+3 Standardize	Placeholders (blank, N/A, -, null)	Converted to real missing values	370
+3 Standardize	Crop spelling variants (22 labels)	Mapped to 6 standard crop names	388
+3 Standardize	District case / spaces	Trimmed and title-cased	73
+3 Standardize	Sowing_Date: 3 text formats	Parsed into one date type (YYYY-MM-DD)	1245
+3 Standardize	Harvest_Date: 3 text formats	Parsed into one date type (YYYY-MM-DD)	1245
+3 Standardize	Area in ha / acre / sq m	Converted all to hectares (Area_ha)	513
+3 Standardize	Numbers stored as text (e.g. '2,275')	Commas removed, converted to numeric	171
+4 Duplicates	Exact duplicate rows	Removed	35
+4 Duplicates	Same Farm_ID, different content	Kept the most complete record	10
+5 Validity	Soil pH outside 0 to 14	Set to missing	10
+5 Validity	Negative rainfall (e.g. -999 code)	Set to missing	6
+5 Validity	Area equal to zero	Set to missing	5
+5 Validity	Harvest date before sowing date	Swapped back (crop cycle 60-300 days)	10
+5 Validity	Harvest date still invalid	Set to missing	0
+6 Missing	Target (Yield) missing	Row dropped (cannot invent the target)	36
+6 Missing	Area missing or invalid	Row dropped (needed for per-hectare features)	5
+6 Missing	Columns above 40% missing	Dropped: none	0
+6 Missing	District missing	Filled with 'Unknown'	11
+6 Missing	Rainfall missing	Median of same District + Season	100
+6 Missing	Soil pH missing	Median of same District	69
+6 Missing	Market price missing	Median of same Crop + Year	82
+6 Missing	Fertilizer missing	Median dose per ha of same Crop x Area	69
+6 Missing	Harvest date missing / invalid	Sowing date + median duration of the crop	0
+7 Outliers	Yield: extreme typing errors	Replaced with crop median	11
+7 Outliers	Yield: extreme but plausible values	Capped at IQR fence	13
+7 Outliers	Market price: extreme typing errors	Replaced with crop median	6
+7 Outliers	Market price: extreme but plausible values	Capped at IQR fence	22
+8 Features	Derived variables	Fertilizer_per_ha, Crop_Duration_days, Sowing_Month, Market_Price_log	1159
